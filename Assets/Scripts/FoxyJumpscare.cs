@@ -20,5 +20,7 @@ public class FoxyJumpscare : MonoBehaviour
         Vector2 pos = transform.localScale;
         pos.x = curve.Evaluate(t);
         pos.y = curve.Evaluate(t);
+
+        transform.localScale = pos;
     }
 }
