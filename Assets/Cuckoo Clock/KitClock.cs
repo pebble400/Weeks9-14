@@ -33,9 +33,10 @@ public class KitClock : MonoBehaviour
     }
     IEnumerator MoveTheClockHandsOneHour()
     {
-        while(t < timeAnHourTakes)
+        t = 0;
+        while (t < timeAnHourTakes)
         {
-            t = 0;
+            
             t += Time.deltaTime;
             minuteHand.Rotate(0, 0, -(360 / timeAnHourTakes) * Time.deltaTime);
             hourHand.Rotate(0, 0, -(30 / timeAnHourTakes) * Time.deltaTime);
