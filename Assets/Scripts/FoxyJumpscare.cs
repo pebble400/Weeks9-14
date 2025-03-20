@@ -16,11 +16,20 @@ public class FoxyJumpscare : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        t += Time.deltaTime;
-        Vector2 pos = transform.localScale;
-        pos.x = curve.Evaluate(t);
-        pos.y = curve.Evaluate(t);
 
-        transform.localScale = pos;
+    }
+    IEnumerator FoxyJumpScare()
+    {
+        t = 0;
+        while(t < 4)
+        {
+            t += Time.deltaTime;
+            Vector2 pos = transform.localScale;
+            pos.x = curve.Evaluate(t);
+            pos.y = curve.Evaluate(t);
+
+            transform.localScale = pos;
+        }
+        
     }
 }
