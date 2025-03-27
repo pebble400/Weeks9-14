@@ -9,6 +9,9 @@ public class Knight : MonoBehaviour
     Animator animator;
     public float speed = 2;
     public bool canRun = true;
+    public AudioSource audioSource;
+    public AudioClip clip;
+
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -41,5 +44,11 @@ public class Knight : MonoBehaviour
         Debug.Log("The attack animation just finished!");
         canRun = true;
     }
-
+    public void FootHasHitGround()
+    {
+        if (audioSource.isPlaying == false)
+        {
+            audioSource.PlayOneShot(clip);
+        }
+    }
 }
