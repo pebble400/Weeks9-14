@@ -11,23 +11,22 @@ public class MouseOverButton : MonoBehaviour
     public Sprite normal;
     public float cookTime;
 
-    private void Update()
-    {
-        StartCoroutine(FoodIsCooking());
 
-    }
     IEnumerator FoodIsCooking()
     {
+        cookTime = 1;
         while (cookTime < 1)
         {
             cookTime += Time.deltaTime;
+            yield return null;
         }
-        yield return null;
+        
     }
 
     public void MouseIsOverUs()
     {
         image.sprite = highlight;
+        StartCoroutine(FoodIsCooking());
 
     }
 
