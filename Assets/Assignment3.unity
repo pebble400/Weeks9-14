@@ -173,6 +173,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd75244a2db2204389ff3540aa5ed2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnCookingHasFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  timerLength: 3
+  t: 0
 --- !u!114 &225021897
 MonoBehaviour:
   m_ObjectHideFlags: 0
