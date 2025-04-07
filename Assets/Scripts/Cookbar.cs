@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using UnityEngine.Events;
 
 public class Cookbar : MonoBehaviour
 {
@@ -18,6 +17,14 @@ public class Cookbar : MonoBehaviour
     //public float overCooked = 0.7f;
     //public Slider visuals;
     //float time = 0;
+
+     void Update()
+    {
+        if(t >= 1)
+        {
+            
+        }
+    }
     void Start()
     {
         slider = GetComponent<Slider>();
@@ -26,16 +33,6 @@ public class Cookbar : MonoBehaviour
     // Update is called once per frame
     public void FoodIsCooked ()
     {
-        t += Time.deltaTime;
-        if (t > timerLength)
-        {
-            t = 0;
-            OnCookingHasFinished.Invoke();
-        }
-        if (t == 1)
-        {
-            Debug.Log("Food's done.");
-        }
-
+ 
     }
 }
