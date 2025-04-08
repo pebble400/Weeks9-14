@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class MouseOverButton : MonoBehaviour
 {
-
+    public UnityEvent isCooked;
     public Slider slider;//Made this pubic so that I can reference it in the inspector
     public float t;
     public Image image;
@@ -25,11 +26,23 @@ public class MouseOverButton : MonoBehaviour
         }
         
     }
+    void Update()
+    {
+        if (t >= 1)
+        {
+            isCooked.Invoke();//triggers the message in console
+        }
+    }
 
     public void MouseIsOverUs()//Swap sprite and start the Coroutine
     {
         image.sprite = highlight;
         StartCoroutine(FoodIsCooking());
+
+    }
+    public void FoodIsCooked()
+    {
+        Debug.Log("Food is done.");//outputs a message in the console 
 
     }
 

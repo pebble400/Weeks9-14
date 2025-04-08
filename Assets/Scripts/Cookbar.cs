@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Cookbar : MonoBehaviour
@@ -9,7 +8,7 @@ public class Cookbar : MonoBehaviour
     //script for the slider component 
     Slider slider;
 
-    public UnityEvent OnCookingHasFinished;
+    
     public float timerLength = 1;
     public float t;
     //public float underCooked = 0.2f;
@@ -18,21 +17,12 @@ public class Cookbar : MonoBehaviour
     //public Slider visuals;
     //float time = 0;
 
-     void Update()
-    {
-        if(t >= 1)
-        {
-            
-        }
-    }
+
     void Start()
     {
         slider = GetComponent<Slider>();
     }
 
     // Update is called once per frame
-    public void FoodIsCooked ()
-    {
- 
-    }
+
 }
