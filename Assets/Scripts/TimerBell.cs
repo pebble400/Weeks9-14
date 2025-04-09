@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TimerBell : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip clip;
 
     public MouseOverButton cooking;
     // Start is called before the first frame update
@@ -20,6 +22,9 @@ public class TimerBell : MonoBehaviour
 
     public void DingDing()
     {
-
+        if (audioSource.isPlaying == false)
+        {
+            audioSource.PlayOneShot(clip);
+        }
     }
 }
